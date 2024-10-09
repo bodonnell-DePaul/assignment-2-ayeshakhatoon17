@@ -12,7 +12,7 @@ const todoItems = [
     {
       title: "Pay Rent",
       description: "Pay rent for the month.",
-      dueDate: new Date(new Date().setDate(new Date().getDate() + 2)).toISOString().split("T")[0], 
+      dueDate: new Date(new Date().setDate(new Date().getDate() + 20)).toISOString().split("T")[0], 
     },
   ];
   

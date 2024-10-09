@@ -1,13 +1,68 @@
-h1 {
+/* App-wide styling */
+.app-container {
+  background-color: #ffebee;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.app-header {
   text-align: center;
+  margin-bottom: 3rem; /* This will create extra space between the header and the content */
 }
 
-h3 {
-  margin-top: 20px;
+
+/* More specific selector */
+button.add-item-btn {
+  background-color: #4a148c;
+  border-color: #4a148c;
+  color: white;
 }
 
-body {
-  background-color:#f3e5f5;
-
+button.add-item-btn:hover {
+  background-color: #6a1b9a;
+  border-color: #6a1b9a;
 }
 
+
+/* Input field styling */
+.input-field {
+  margin-bottom: 15px;
+}
+
+/* Date input styling */
+.date-input {
+  width: 50%;
+}
+
+/* Styling for editable content description */
+.description-content {
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+/* Margin for ToDo list title */
+h4 {
+  margin-bottom: 1rem;
+}
+
+/* Color variants based on due date */
+.primary {
+  background-color: #c6d0da !important;
+  color: white !important;
+}
+
+.success {
+  background-color: #e3f2e7 !important;
+  color: white !important;
+}
+
+.warning {
+  background-color: #f8a6da !important;
+  color: white !important;
+}
+
+.danger {
+  background-color: #f36b79 !important;
+  color: white !important;
+}
