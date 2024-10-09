@@ -1,31 +1,28 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, ListGroup, Form, Button, Tab } from 'react-bootstrap';
-import todoItems from './todoItems'; // Static array of ToDo items
-import './App.css'; // Import the CSS file
+import todoItems from './todoItems'; 
+import './App.css'; 
 
 function App() {
-  // State for ToDo items
   const [items, setItems] = useState(todoItems);
   const [newTitle, setNewTitle] = useState('');
   const [newDescription, setNewDescription] = useState('');
   const [newDueDate, setNewDueDate] = useState('');
   
-  // Function to determine Bootstrap color variant based on due date
+
   const getVariant = (dueDate) => {
     const today = new Date();
     const due = new Date(dueDate);
-    
-    // Reset time component to midnight for accurate day comparison
     today.setHours(0, 0, 0, 0);
     due.setHours(0, 0, 0, 0);
 
     const diffTime = due - today;
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); // Convert milliseconds to days
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
 
-    if (diffDays > 7) return 'primary'; // More than 7 days away
-    if (diffDays <= 7 && diffDays > 4) return 'success'; // Between 4 and 7 days away
-    if (diffDays <= 4 && diffDays > 2) return 'warning'; // Between 2 and 4 days away
-    return 'danger'; // Less than 2 days away
+    if (diffDays > 7) return 'primary'; 
+    if (diffDays <= 7 && diffDays > 4) return 'success'; 
+    if (diffDays <= 4 && diffDays > 2) return 'warning'; 
+    return 'danger';
   };
 
   // Function to handle adding a new ToDo item
@@ -46,14 +43,12 @@ function App() {
 
   return (
     <Container fluid className="app-container">
-      {/* Header Section */}
       <header className="app-header">
         <h2>Assignment 2 - AYESHA'S ToDo List</h2>
       </header>
 
       <Tab.Container id="todo-tabs" defaultActiveKey="#item0">
         <Row>
-          {/* ToDo List Group */}
           <Col sm={4}>
             <h4>Your todo list</h4>
             <ListGroup>
@@ -70,7 +65,7 @@ function App() {
             </ListGroup>
           </Col>
 
-          {/* Tab Content for Description and Due Date */}
+
           <Col sm={4}>
             <Tab.Content>
               {items.map((item, index) => (
@@ -97,7 +92,7 @@ function App() {
         </Row>
       </Tab.Container>
 
-      {/* Add New Item Form */}
+     
       <Row className="mt-4">
         <Col sm={3}>
           <h4>Add New ToDo</h4>
